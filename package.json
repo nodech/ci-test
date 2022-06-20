@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/nodech/ci-test#readme",
   "dependencies": {
-    "bcrypto": "^5.4.0",
     "bfilter": "1.0.5"
   }
 }
