@@ -1,0 +1,115 @@
+name: Node.js
+
+on: [push, pull_request]
+jobs:
+  build-test-14:
+    name: Windows Build ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
+        node: [14.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+
+    - name: Update npm
+      run: npm i -g npm
+
+    - name: Install dependencies
+      run: npm install
+
+  build-test-16:
+    name: Windows Build ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
+        node: [16.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+
+    - name: Update npm
+      run: npm i -g npm
+
+    - name: Install dependencies
+      run: npm install
+
+  build-test-18:
+    name: Windows Build ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
+        node: [18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+
+    - name: Update npm
+      run: npm i -g npm
+
+    - name: Install dependencies
+      run: npm install
+
+  build-test-matrix:
+    name: Windows Build Matrix
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
+        node: [14.x, 16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+
+    - name: Update npm
+      run: npm i -g npm
+
+    - name: Install dependencies
+      run: npm install
+
+  build-test-matrix-nop:
+    name: Windows Build Matrix MAX_PARALLEL=1
+    runs-on: ${{ matrix.os }}
+    strategy:
+      max-parallel: 1
+      matrix:
+        os: [windows-latest]
+        node: [14.x, 16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+
+    - name: Update npm
+      run: npm i -g npm
+
+    - name: Install dependencies
+      run: npm install
+
