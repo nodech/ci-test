@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nodech/ci-test#readme",
   "dependencies": {
-    "bdb": "^1.4.0"
+    "bdb": "^1.4.0",
+    "bfilter": "1.0.5"
   }
 }
